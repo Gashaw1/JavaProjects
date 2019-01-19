@@ -4,7 +4,7 @@ import java.util.Random;
 public class ArrayOperations 
 {
 	
-	private static int FindLargest(int[] num)
+	static int FindLargest(int[] num)
 	{
 		int largestValue = 0;
 		
@@ -17,7 +17,7 @@ public class ArrayOperations
 		}
 		return largestValue;
 	} 
-	private static void FillTheArray(int[] array)
+    static void FillArrayRandomNumber(int[] array)
 	{
 		int[] myArray;
 		int min = -100;
@@ -34,7 +34,7 @@ public class ArrayOperations
                
 	}
    
-	private static int FindLengthOflongestContinuousSeriesPositiveNumberInArray(int[] array)
+	static int FindLengthOflongestContinuousSeriesPositiveNumberInArray(int[] array)
 	{		
 		int longestCounterValue = 0;
 		int counter = 0;	
@@ -68,7 +68,7 @@ public class ArrayOperations
 		int[] nums = {1, 4, 13, 43, -25, 17, 22, -37, 29};
 		int[] data = new int[20];		
         
-		FillTheArray(data);
+		FillArrayRandomNumber(data);
     
         System.out.print("Nums array values: ");
         PrintArrayValues(nums);      
