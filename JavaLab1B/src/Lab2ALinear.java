@@ -1,5 +1,6 @@
 
 import java.util.Random;
+//Gashawbeza Amalto
 public class Lab2ALinear 
 {
 
@@ -39,8 +40,6 @@ public class Lab2ALinear
 			System.out.print(" | " + array[i] );
 		}		
 	}
-	
-
 	public static void main(String[] args) 
 	{
 		int[]nums = {1, 4, 4, 22, -5, 10, 21, -47, 23};
@@ -53,10 +52,37 @@ public class Lab2ALinear
 	    System.out.print("Data array alues: ");
 	    PrintArrayValues(data);
 	  
-	    int result = LinearSearch(nums, -4);
+	    System.out.println();	    
+	    
+	    System.out.println("linear Search for num array");
+	  
+	    int key = 22;
+	    int searchNums = LinearSearch(nums, key);	
+	   
+	    if(searchNums != - 1)
+	    {
+	    	 System.out.print( key + " foud at index of " +  searchNums );
+	    }
+	    else
+	    {
+	    	System.out.print(searchNums);
+	    }
+	    System.out.println();
+	   
+	    System.out.println("linear Search for data array");
+	   
+	    int searchData = LinearSearch(data, key);	
+	   
+	    if(searchData != - 1)
+	    {
+	    	 System.out.print( key + " foud at index of " +  searchData );
+	    }
+	    else
+	    {
+	    	System.out.print(searchData);
+	    }
 		
 		
-		LinearSearch(data, -12);
 	}
 
 }

@@ -1,6 +1,7 @@
 
 
 import java.util.Random;
+//Gashawbeza Amalto
 public class ArrayOperations 
 {
 	
@@ -30,10 +31,11 @@ public class ArrayOperations
   		{  			
   			myArray[i]= rand.nextInt(max + 1 -min) + min;
    		}
-  		//return myArray;		
+  			
                
 	}
    
+    
 	static int FindLengthOflongestContinuousSeriesPositiveNumberInArray(int[] array)
 	{		
 		int longestCounterValue = 0;
@@ -55,7 +57,7 @@ public class ArrayOperations
 		}
 		return longestCounterValue;
 	}
-	public static void PrintArrayValues(int[] array)
+	static void PrintArrayValues(int[] array)
 	{
 		for(int i =0; i < array.length; i ++)
 		{
