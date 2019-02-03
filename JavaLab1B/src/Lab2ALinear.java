@@ -56,7 +56,7 @@ public class Lab2ALinear
 	    
 	    System.out.println("linear Search for num array");
 	  
-	    int key = 22;
+	    int key = 21;
 	    int searchNums = LinearSearch(nums, key);	
 	   
 	    if(searchNums != - 1)

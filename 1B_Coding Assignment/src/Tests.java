@@ -1,11 +1,12 @@
 
 import java.util.*;
+//Gashawbeza Amalto
 public class Tests {
 	private String FirstName;
 	private String LastName;
 	private double Average;
 	private String Grade;
-	public int[] TestScores = new int[5];
+	public double[] TestScores = new double[5];
 
 	public String getFirstName() {
 		return FirstName;
@@ -42,7 +43,7 @@ public class Tests {
 	public Tests() {
 	}
 
-	public Tests(String firstname, String lastname, int[] testScore, double average, String grade) {
+	public Tests(String firstname, String lastname, double[] testScore, double average, String grade) {
 		this.setFirstName(firstname);
 		this.setLastName(lastname);
 		this.setAverage(average);
@@ -50,9 +51,9 @@ public class Tests {
 		this.TestScores = testScore;
 	}
 
-	private static double CalculateStudentAverage(int[] testScore) {
-		int totalGrade = 0;
-		int average = 0;
+	private static double CalculateStudentAverage(double[] testScore) {
+		double totalGrade = 0;
+		double average = 0;
 		int counter = 0;
 		for (int i = 0; i < testScore.length; i++) {
 			totalGrade = totalGrade + testScore[i];
@@ -95,9 +96,9 @@ public class Tests {
 
 	public static Tests[] GetTestList() {
 
-		Tests[] tests = new Tests[2];
-		for (int s = 0; s < 2; s++) {
-			int[] score = new int[5];
+		Tests[] tests = new Tests[5];
+		for (int s = 0; s < tests.length; s++) {
+			double[] score = new double[5];
 
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("     Enter your firstname: ");
@@ -136,23 +137,21 @@ public class Tests {
 		System.out.println();
 		System.out.print("STUDENT REPORT \n\n");
 
-		System.out.printf("%-10s %-10s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %n", "First Name", "Last Name", "Test1",
+		System.out.printf("%-15s %-15s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %n", "First Name", "Last Name", "Test1",
 				"Test2", "Test3", "Test4", "Test5", "Average", "Grade");
 		for (int i = 0; i < tests.length; i++) {
 			Tests tes = new Tests(tests[i].FirstName, tests[i].LastName, tests[i].TestScores, tests[i].Average,
 					tests[i].Grade);
 
-			System.out.printf("%-10s %-10s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %n", tes.getFirstName(),
+			System.out.printf("%-15s %-15s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %n", tes.getFirstName(),
 					tes.getLastName(), tes.TestScores[0], tes.TestScores[1], tes.TestScores[2], tes.TestScores[3],
 					tes.TestScores[4], tes.getAverage(), tes.getGrade());
 		}
 		
 		System.out.println(" \nCLASS AVERAGE: " + Tests.CalculateClassesAverage(tests));
 	}
-
 	// main method
 	public static void main(String[] args) {
-
 		Tests.PrintTestList(Tests.GetTestList());
 	}
 }

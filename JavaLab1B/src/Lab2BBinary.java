@@ -3,8 +3,7 @@ import java.util.Random;
 //Gashawbeza Amalto
 public class Lab2BBinary {
 
-	static int[] SortArray(int[] array) 
-	{
+	static int[] SortArray(int[] array) {
 		int i, j, tmp;
 		for (i = 0; i < array.length; i++) {
 			for (j = i + 1; j < array.length; j++) {
@@ -16,8 +15,7 @@ public class Lab2BBinary {
 			}
 		}
 		return array;
-	}	
-
+	}
 	// binary search
 	static String BinarySearch(int[] sortedList, int key) {
 		String searchResult = "";
@@ -26,31 +24,23 @@ public class Lab2BBinary {
 		int minValue = 0;
 		int lenngth = sortedList.length - 1;
 
-		while (minValue <= lenngth) 
-		{
-			
+		while (minValue <= lenngth) {
+
 			middleValue = (lenngth + minValue) / 2;
 
-			
-			if (sortedList[middleValue] < key) 
-			{				
+			if (sortedList[middleValue] < key) {
 				minValue = middleValue + 1;
-				
-			} else if (sortedList[middleValue] > key)
-			{
+
+			} else if (sortedList[middleValue] > key) {
 				lenngth = middleValue - 1;
-			}
-			else 
-			{
-				
+			} else {
 				searchResult = " " + key + " at index of " + middleValue;
-				minValue = lenngth + 1;				
-			}			
+				minValue = lenngth + 1;
+			}
 		}
-		if(searchResult == "")
-		{
-			int inss =  middleValue + 1;
-			searchResult = " " + inss;
+		if (searchResult == "") {
+			int inss = middleValue + 1;
+			searchResult = "Not found!:  " + inss;
 		}
 		return searchResult;
 	}
@@ -80,14 +70,14 @@ public class Lab2BBinary {
 		int[] data = new int[20];
 		FillArrayRandomNumber(data);
 
-		System.out.print("unsorted num array: ");
+		System.out.print("unsorted nums array: ");
 		PrintArrayValues(nums);
 		System.out.println();
 		System.out.print("unsorted data array: ");
 		PrintArrayValues(data);
 		System.out.println();
 		System.out.println();
-		System.out.print("Sorted num array: ");
+		System.out.print("Sorted nums array: ");
 		PrintArrayValues(SortArray(nums));
 
 		System.out.println();
@@ -95,7 +85,7 @@ public class Lab2BBinary {
 		PrintArrayValues(SortArray(data));
 		System.out.println();
 		System.out.println();
-		System.out.println("search result num array: " + BinarySearch(SortArray(nums), 5));
+		System.out.println("search result nums array: " + BinarySearch(SortArray(nums), 21));
 		System.out.println("search result data array: " + BinarySearch(SortArray(data), 21));
 
 	}
