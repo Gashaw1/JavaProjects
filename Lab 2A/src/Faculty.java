@@ -1,5 +1,6 @@
 
 
+
 class Faculty extends Employee {
 	public String officeHour;
 	public int rank;

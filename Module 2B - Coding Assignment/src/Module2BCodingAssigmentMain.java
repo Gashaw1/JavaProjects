@@ -1,6 +1,7 @@
 import java.util.Scanner;
+//Gashawbeza Amalto
 abstract class Vacation {
-	public double budget;
+	double budget;
 	String destination;
 	abstract double CalcBudget(double budget);
 }
@@ -32,7 +33,7 @@ class All_InclusiveVacation extends Vacation {
 				"\n	Brand: " + this.brand +
 				"\n	Rate: " + this.rate +
 				"\n	Price: " + this.price +
-				"\n	Compart Budget: $"+ this.budget;
+				"\n	Compare to Budget: $"+ this.budget;
 
 	};
 }
@@ -49,7 +50,7 @@ class PiecemealVacation  extends Vacation
 	
 	public PiecemealVacation(String hotel,double hotelCost,
 			String meal,double mealCost,
-			String airfare, double airfreCost,
+			String airfare, double airfareCost,
 			String destination, double budget)
 	{
 	   this.hotel = hotel;
@@ -78,7 +79,7 @@ class PiecemealVacation  extends Vacation
 				"\n	Hotel: " + this.hotel + ": $" + this.hotelCost +
 				"\n	Meal: " + this.meal +": $" + this.mealCost +
 				"\n	Airfare: " + this.airfare + ": $" + this.airfareCost +
-				"\n	Compart Budget: $"+ this.budget;
+				"\n	Compare to Budget: $"+ this.budget;
 	}
 }
 
@@ -87,24 +88,24 @@ public class Module2BCodingAssigmentMain {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);  
-		System.out.print("Whats is budget? ");
+		System.out.print("What is your budget? ");
 	    double userInput = scanner.nextDouble();
 	    
 	    System.out.println("Budget: " + userInput);
 	    
-		All_InclusiveVacation allInclusive = new All_InclusiveVacation("Hotel", "***", 447.5, "atlant", userInput);
+		All_InclusiveVacation allInclusive = new All_InclusiveVacation("ClubMed", "***", 6000, "jamaica", userInput);
 		System.out.println(allInclusive);
 
 		//System.out.println();
-		All_InclusiveVacation person = new All_InclusiveVacation("Hotel", "*****", 44.5, "atlant", userInput);
+		All_InclusiveVacation person = new All_InclusiveVacation("Delta Vacations", "*****", 400, "Vegas", userInput);
 		System.out.println(person);
 		
 		
 		
-		PiecemealVacation piecemealVacation = new PiecemealVacation("Hilto",345,"food",33,"airport",99,"atlant",userInput);
+		PiecemealVacation piecemealVacation = new PiecemealVacation("hilton hotel",345,"food",230,"northwest airlines",900,"japan",userInput);
 		System.out.println(piecemealVacation);
 		
-		PiecemealVacation piecemealVacation2 = new PiecemealVacation("Hyte",907,"food",88,"airport",99,"atlant",userInput);
+		PiecemealVacation piecemealVacation2 = new PiecemealVacation("marriott hotel",907,"food",200,"delta airlines",1500,"thailand",userInput);
 		System.out.println(piecemealVacation2);
 		
 	}
