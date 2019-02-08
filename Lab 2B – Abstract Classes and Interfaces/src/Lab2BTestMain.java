@@ -7,6 +7,11 @@ abstract class GeometricObject {
 class Octagon extends GeometricObject implements Comparable<Octagon>, Cloneable {
 	double side = 0;
 
+	public Octagon()
+	{
+		
+	}
+	
 	public Octagon(double side) {
 		this.side = side;
 	}
@@ -61,9 +66,9 @@ public class Lab2BTestMain {
 	public static void main(String[] args) {
 		Octagon oct = new Octagon(8);
 		System.out.println(oct);
-		oct.clone();
-
-		int result = oct.compareTo(oct.clone());
+		Octagon oct2 = new Octagon();
+		oct2 = oct.clone();
+		int result = oct.compareTo(oct2);
 
 		// Octagon.IsEqual(result);
 

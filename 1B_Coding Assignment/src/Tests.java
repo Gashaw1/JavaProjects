@@ -132,14 +132,16 @@ public class Tests {
 		return tests;
 	}
 
-	public static void PrintTestList(Tests[] tests) {
+	public static void PrintTestList(Tests[] tests)
+	{
 
 		System.out.println();
 		System.out.print("STUDENT REPORT \n\n");
 
 		System.out.printf("%-15s %-15s %-8s %-8s %-8s %-8s %-8s %-8s %-8s %n", "First Name", "Last Name", "Test1",
 				"Test2", "Test3", "Test4", "Test5", "Average", "Grade");
-		for (int i = 0; i < tests.length; i++) {
+		for (int i = 0; i < tests.length; i++) 
+		{
 			Tests tes = new Tests(tests[i].FirstName, tests[i].LastName, tests[i].TestScores, tests[i].Average,
 					tests[i].Grade);
 
