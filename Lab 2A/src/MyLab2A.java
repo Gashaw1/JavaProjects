@@ -2,7 +2,9 @@
 //Gashawbeza Amalto
 public class MyLab2A {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	
+	{
 		// TODO Auto-generated method stub
 
 		System.out.println("OUT PUT");
@@ -21,6 +23,10 @@ public class MyLab2A {
 		Staff staff = new Staff("Manager", "B245", 33.5, date, "Selemon Teddy", "44430PeachTree RD", "444 444 4444",
 				"sample22@email.com");
 		System.out.println(staff);
+		
+		
+	
+
 
 	}
 

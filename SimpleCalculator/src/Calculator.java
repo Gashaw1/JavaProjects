@@ -16,10 +16,10 @@ public class Calculator {
 	private JFrame frame;
 	private JTextField textScrean;
 	
-	String x = "";
-	/**
-	 * Launch the application.
-	 */
+	 String num = "";
+	 String num2 = "";
+     String operator = "";
+     
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,10 +32,6 @@ public class Calculator {
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
 	public Calculator() {
 		initialize();
 	}
@@ -78,18 +74,28 @@ public class Calculator {
 		frame.getContentPane().add(btn5);
 		
 		JButton btn1 = new JButton("1");
-		btn1.addActionListener(new ActionListener() {
+		btn1.addActionListener(new ActionListener()
+		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
-			   x +=	btn1.getText();
-			   
-			   textScrean.setText(x);
+				 textScrean.setText("");
+			   num +=	btn1.getText();			   
+			   textScrean.setText(num);
 			}
 		});
 		btn1.setBounds(10, 261, 78, 59);
 		frame.getContentPane().add(btn1);
 		
 		JButton btn2 = new JButton("2");
+		btn2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				 
+				 num +=	btn2.getText();
+				 textScrean.setText(num);
+			}
+		});
 		btn2.setBounds(98, 261, 78, 59);
 		frame.getContentPane().add(btn2);
 		
@@ -110,6 +116,18 @@ public class Calculator {
 		frame.getContentPane().add(btnDot);
 		
 		JButton btnEqual = new JButton("=");
+		btnEqual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{				
+			   num = textScrean.getText();			  
+			   textScrean.setText("");
+			   
+			   textScrean.setText(CalculaterLogic.Calculate(num, num2, operator));
+			   num2 = "";
+			   num = "";
+			   operator = "";
+			}
+		});
 		btnEqual.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnEqual.setBounds(114, 410, 238, 59);
 		frame.getContentPane().add(btnEqual);
@@ -126,6 +144,15 @@ public class Calculator {
 		frame.getContentPane().add(btnSub);
 		
 		JButton btnAdd = new JButton("+");
+		btnAdd.addActionListener(new ActionListener()
+		{	
+			public void actionPerformed(ActionEvent e)
+			{
+			    num2 = num;
+			    num = "";			   
+			    operator = btnAdd.getText();
+			}
+		});
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnAdd.setBounds(274, 261, 78, 59);
 		frame.getContentPane().add(btnAdd);
@@ -140,13 +167,14 @@ public class Calculator {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{			   
-				   x = "";				   
-				   textScrean.setText(x);
+	               num = "";
+	               num2 = "";
+				   textScrean.setText("");
 			}		});
 		btnClear.setBounds(10, 410, 94, 59);
 		frame.getContentPane().add(btnClear);
 		
-		JLabel lblSampleCalculator = new JLabel("Sample Calculator");
+		JLabel lblSampleCalculator = new JLabel("Simple Calculator");
 		lblSampleCalculator.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
 		lblSampleCalculator.setBounds(10, 506, 266, 45);
 		frame.getContentPane().add(lblSampleCalculator);

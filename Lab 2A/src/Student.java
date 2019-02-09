@@ -1,10 +1,12 @@
 
 
-class Student extends Person {
+class Student extends Person
+{
 	String status;
 	final String statusList[] = { "freshman", "sophomore", "junior", "senior" };
 
-	public Student(int statusIndex, String name, String address, String phoneNumber, String emailAddress) {
+	public Student(int statusIndex, String name, String address, String phoneNumber, String emailAddress)
+	{
 		super(name, address, phoneNumber, emailAddress);
 		this.status = statusList[statusIndex].toString();
 
@@ -18,3 +20,6 @@ class Student extends Person {
 				+ this.phoneNumber + "\n	Email: " + this.emailAddress + "\n	Status: " + this.status;
 	}
 };
+
+
+
