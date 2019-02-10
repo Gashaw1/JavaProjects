@@ -1,0 +1,71 @@
+
+class Calculator
+BEGAN
+       num1     
+       num2
+    char operator
+    
+      Constractor Calculator( parameters:  num1,    num2, char operator)
+    BEGAN
+        this  num1 = num1
+        this  num2 = num2
+        this  operator = operator
+    
+    END constaractor
+      Method   Calculate()
+    BEGAN
+        if(this  operator == '+')
+        BEGAN
+            return     call  addition(parameters:  num1, this  num2)
+        END
+        if(this  operator =='-')
+        BEGAN
+            return    call subtraction(parametrers: num1, this  num2))
+        END
+        else if(this  operator =='*')
+        BEGAN
+           return      Call multiplication(parameters: num1, this  num2))
+        END
+        else if(this  operator =='/')
+        BEGAN
+            if(num2 == 0)
+            BEGAN
+                return "\nError division by zero!"
+            END
+            else
+            BEGAN
+                 return     call division(this  num1, this  num2))
+            END
+        END
+        else
+        BEGAN
+            return ""
+        END
+    END
+          addition(   num1,    num2)
+    BEGAN
+        return num1 + num2
+    END
+          subtraction(   num1,    num2)
+    BEGAN
+        return num1 - num2
+    END
+          multiplication(   num1,    num2)
+    BEGAN
+        return num1 * num2
+    END
+          division(   num1,    num2)
+    BEGAN
+        return num1 / num2 
+    END
+END
+   class Main
+BEGAN
+	   static void main(  [] args) 
+	BEGAN
+	       str = new Calculator(3,-3,'/')  Calculate()
+	    
+	    System  out  println("Hello World  " + str)
+	
+	END
+END
