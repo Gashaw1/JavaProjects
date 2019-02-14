@@ -2,10 +2,11 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import javafx.scene.layout.StackPane;
+
 import javax.swing.JButton;
 import java.awt.Font;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
@@ -20,7 +21,9 @@ public class Calculator {
 	 String num2 = "";
      String operator = "";
      
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
+		//StackPane la = new StackPane();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -44,6 +47,7 @@ public class Calculator {
 		frame.setBounds(100, 100, 387, 617);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
 		
 		textScrean = new JTextField();
 		textScrean.setFont(new Font("Tahoma", Font.BOLD, 22));
@@ -116,7 +120,8 @@ public class Calculator {
 		frame.getContentPane().add(btnDot);
 		
 		JButton btnEqual = new JButton("=");
-		btnEqual.addActionListener(new ActionListener() {
+		btnEqual.addActionListener(new ActionListener()
+		{
 			public void actionPerformed(ActionEvent e)
 			{				
 			   num = textScrean.getText();			  
