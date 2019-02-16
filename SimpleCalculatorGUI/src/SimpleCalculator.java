@@ -1,5 +1,7 @@
 
 
+import java.awt.Event;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;  
 import javafx.stage.Stage; 
 
-public class SimpleCalculator extends Application implements EventHandler<ActionEvent>
+public class SimpleCalculator extends Application 
 {
 	
 	static Button btn0;
@@ -36,22 +38,19 @@ public class SimpleCalculator extends Application implements EventHandler<Action
 	static Button btnSub;
 	static Button btnClear;
    
-	TextField txtDisplay;
+	static TextField txtDisplay;
 	
 	Text text;
 
 	public static void main(String[] args) 
 	{
 		launch(args);
-
 	}
-
-
 	@Override
 	public void start(Stage primaryStage) throws Exception 
 	{
 		btn1=new Button("1");
-		btn1.setMinSize(70, 50);
+		btn1.setMinSize(70, 50);		
 		btn1.getOnAction();
 		
 		btn2=new Button("2");
@@ -92,9 +91,30 @@ public class SimpleCalculator extends Application implements EventHandler<Action
 		
 		txtDisplay = new TextField();
 		txtDisplay.setMinSize(300, 65);
+		
+		Calculator caluclatorAndEvent = new Calculator();
+		
+		
+		
+		btn0.setOnAction(caluclatorAndEvent);
+		btn1.setOnAction(caluclatorAndEvent);
+		btn2.setOnAction(caluclatorAndEvent);
+		btn3.setOnAction(caluclatorAndEvent);
+		
+		
+		btnAdd.setOnAction(caluclatorAndEvent);
+		btnSub.setOnAction(caluclatorAndEvent);
+		btnDivi.setOnAction(caluclatorAndEvent);
+		btnMult.setOnAction(caluclatorAndEvent);
+		
+		btnClear.setOnAction(caluclatorAndEvent);
+		btnEqual.setOnAction(caluclatorAndEvent);
+		
+		
+		
+		
 		GridPane grid = new GridPane();	
-		grid.setMinSize(400, 500);
-		//grid.setMaxSize(300,300);
+		grid.setMinSize(400, 500);		
 		grid.setAlignment(Pos.CENTER);
 		
 		
@@ -122,7 +142,7 @@ public class SimpleCalculator extends Application implements EventHandler<Action
 		grid.add(btnMult, 4, 4); 
 		
 		grid.add(btnClear, 1, 5); 
-		//grid.add(btnMult, 2, 4); 
+	
 	   		
 		//Setting the vertical and horizontal gaps between the columns 
 		grid.setVgap(5); 
@@ -131,19 +151,6 @@ public class SimpleCalculator extends Application implements EventHandler<Action
 		Scene scene = new Scene(grid); 
 		primaryStage.setScene(scene);
 		primaryStage.show();
-	}
-
-
-	@Override
-	public void handle(ActionEvent event)
-	{
-		System.out.print("ddd" + event);
-		
-		
-		if(event.getSource() == "+")
-		
-			txtDisplay.setText("++");
-		
 	}
 
 }
