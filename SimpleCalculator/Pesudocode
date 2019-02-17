@@ -1,5 +1,5 @@
 
-class Calculator
+Create class Calculator implement an interface  EventHandler<Type: ActionEvent> 
 BEGAN
        num1     
        num2
@@ -14,21 +14,21 @@ BEGAN
     END constaractor
       Method   Calculate()
     BEGAN
-        if(this  operator == '+')
+        if(this  operator == add sign) THEN
         BEGAN
             return     call  addition(parameters:  num1, this  num2)
         END
-        if(this  operator =='-')
+        if(this  operator == substraction sign) THen
         BEGAN
             return    call subtraction(parametrers: num1, this  num2))
         END
-        else if(this  operator =='*')
+        else if(this  operator == multplication sign) then
         BEGAN
            return      Call multiplication(parameters: num1, this  num2))
         END
-        else if(this  operator =='/')
+        else if(this  operator == division sign)
         BEGAN
-            if(num2 == 0)
+            if(num2 == 0) 	THEn
             BEGAN
                 return "\nError division by zero!"
             END
@@ -42,30 +42,57 @@ BEGAN
             return ""
         END
     END
-          addition(   num1,    num2)
+           addition(parameters: num1, num2)
     BEGAN
         return num1 + num2
     END
-          subtraction(   num1,    num2)
+          subtraction(Parameters: num1, num2)
     BEGAN
         return num1 - num2
     END
-          multiplication(   num1,    num2)
+          multiplication(parameters:   num1,    num2)
     BEGAN
         return num1 * num2
     END
-          division(   num1,    num2)
+          division(parameters:  num1,    num2)
     BEGAN
         return num1 / num2 
     END
 END
-   class Main
-BEGAN
-	   static void main(  [] args) 
+
+
+
+	Override METHOD handle(Parameter: event) 
 	BEGAN
-	       str = new Calculator(3,-3,'/')  Calculate()
-	    
-	    System  out  println("Hello World  " + str)
-	
+		
+		if(event CALL getSource() == button 0 or button 1 or … button 9) THEN
+		BEGAN			
+			tempValue + <- event CALL getSource() CALL getText()	
+			Print tempValu
+		END
+		
+		if(event CALL getSource() ==  clear button) THEN
+		BEGAN
+			tempValue <- “”					
+			Print “”
+		END
+		
+		if(event Call getSource() ==  add button or substraction button or division button or multiplication button) THEN
+		BEGAN
+			operator <- event Call getSource() call getText()
+			num1 = Call parseDouble (Argument: tempValue)		
+			tempValue = "";		
+			
+		END
+		
+	if(event call getSource() == equal button) THEN
+		BEGAN
+			
+			num2 <- Call parseDouble(Argurment: tempValue);		
+						
+			Print Call Calculate()			
+			
+		END
+			
+		
 	END
-END

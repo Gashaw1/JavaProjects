@@ -61,35 +61,38 @@ public class Calculator implements EventHandler<ActionEvent>
 	@Override
 	public void handle(ActionEvent event) 
 	{
-		//for all number buttons
+		//all number buttons
 		if(event.getSource() == SimpleCalculator.btn0 || event.getSource() == SimpleCalculator.btn1 ||event.getSource() == SimpleCalculator.btn2 || event.getSource() == SimpleCalculator.btn3)
 		{			
 			tempValue += ((Button)event.getSource()).getText();		
-			SimpleCalculator.txtDisplay.setText(tempValue);		
-			
+			SimpleCalculator.txtDisplay.setText(tempValue);				
 			System.out.println(tempValue);
 		}
-		//for clear button
+		//clear button
 		if(event.getSource()==SimpleCalculator.btnClear)
 		{
 			tempValue = "";
-			SimpleCalculator.txtDisplay.setText(tempValue);
-			
-			System.out.println("Clear event occure: " + tempValue);
+			SimpleCalculator.txtDisplay.setText(tempValue);			
+			System.out.println("Clear event fire: " + tempValue);
 		}
-		//for operators buttons
+		//operators buttons
 		if(event.getSource() == SimpleCalculator.btnAdd || event.getSource() == SimpleCalculator.btnSub || event.getSource() == SimpleCalculator.btnDivi || event.getSource() == SimpleCalculator.btnMult)
 		{
 			operator = ((Button)event.getSource()).getText();
 			num1 = Double.parseDouble(tempValue);			
 			tempValue = "";
+			
+			System.out.println("Operator: " + operator);
 		}
-		//for equal button
+		//equal button
 		if(event.getSource() == SimpleCalculator.btnEqual)
 		{
+			
 			num2 = Double.parseDouble(tempValue);			
 			Calculate();			
-			SimpleCalculator.txtDisplay.setText(Calculate());		
+			SimpleCalculator.txtDisplay.setText(Calculate());
+			System.out.println("Equal to:  " + Calculate());
+			
 			
 		}
 			
