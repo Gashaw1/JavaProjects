@@ -5,7 +5,7 @@ BEGAN
        num2
     char operator
     
-      Constractor Calculator( parameters:  num1,    num2, char operator)
+      Constractor Calculator( parameters:  num1, num2, operator)
     BEGAN
         this  num1 = num1
         this  num2 = num2
@@ -65,7 +65,7 @@ END
 	Override METHOD handle(Parameter: event) 
 	BEGAN
 		
-		if(event CALL getSource() == button 0 or button 1 or … button 9) THEN
+		if(event CALL getSource() == button 0 or button 1 or ... button 9) THEN
 		BEGAN			
 			tempValue + <- event CALL getSource() CALL getText()	
 			Print tempValu

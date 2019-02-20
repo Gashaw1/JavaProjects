@@ -51,7 +51,7 @@ public class SimpleCalculator extends Application
 	{
 		btn1=new Button("1");
 		btn1.setMinSize(70, 50);		
-		btn1.getOnAction();
+		//btn1.getOnAction();
 		
 		btn2=new Button("2");
 		btn2.setMinSize(70, 50);
@@ -97,7 +97,7 @@ public class SimpleCalculator extends Application
 		
 		
 		btn0.setOnAction(caluclatorAndEvent);
-		btn1.setOnAction(caluclatorAndEvent);
+		btn1.setOnAction(new Calculator());
 		btn2.setOnAction(caluclatorAndEvent);
 		btn3.setOnAction(caluclatorAndEvent);
 		
@@ -111,6 +111,7 @@ public class SimpleCalculator extends Application
 		btnEqual.setOnAction(caluclatorAndEvent);
 		
 		
+		//Panel pan = new Panel()
 		
 		
 		GridPane grid = new GridPane();	

@@ -11,7 +11,18 @@ class Octagon extends GeometricObject implements Comparable<Octagon>, Cloneable 
 	{
 		
 	}
-	
+	public String tests()
+	{
+		String f ="xxx";
+		String x = "xxxx";
+		x.toUpperCase();
+		x.toLowerCase();
+		f.indexOf(2);
+		f.concat(x);
+		f.compareTo(x);
+		x.contentEquals(f);
+		return "";
+	}
 	public Octagon(double side) {
 		this.side = side;
 	}
@@ -62,8 +73,19 @@ class Octagon extends GeometricObject implements Comparable<Octagon>, Cloneable 
 	}
 }
 
+class a
+{}
+class b{}
+class c extends b
+{
+	
+}
 public class Lab2BTestMain {
-	public static void main(String[] args) {
+	
+	public static void main(String[] args)
+	{
+		
+		
 		Octagon oct = new Octagon(8);
 		System.out.println(oct);
 		Octagon oct2 = new Octagon();

@@ -63,7 +63,10 @@ public class Calculator implements EventHandler<ActionEvent>
 	{
 		//all number buttons
 		if(event.getSource() == SimpleCalculator.btn0 || event.getSource() == SimpleCalculator.btn1 ||event.getSource() == SimpleCalculator.btn2 || event.getSource() == SimpleCalculator.btn3)
-		{			
+		{		
+			 //System.out.println("test tet " + SimpleCalculator.btn1 + "" + event.getSource());
+			
+			
 			tempValue += ((Button)event.getSource()).getText();		
 			SimpleCalculator.txtDisplay.setText(tempValue);				
 			System.out.println(tempValue);
