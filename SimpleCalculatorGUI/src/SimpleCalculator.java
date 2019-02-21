@@ -1,22 +1,16 @@
 
 
-import java.awt.Event;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-//import static javafx.application.Application.launch; 
-import javafx.geometry.Insets; 
 import javafx.geometry.Pos; 
-
 import javafx.scene.Scene; 
 import javafx.scene.text.Text;
-import javafx.scene.control.Button; 
-import javafx.scene.control.PasswordField; 
+import javafx.scene.control.Button;
+
 import javafx.scene.control.TextField; 
 import javafx.scene.layout.GridPane;  
 import javafx.stage.Stage; 
-
+//Gashawbeza Amalto
 public class SimpleCalculator extends Application 
 {
 	
@@ -49,6 +43,9 @@ public class SimpleCalculator extends Application
 	@Override
 	public void start(Stage primaryStage) throws Exception 
 	{
+		
+		primaryStage.setTitle("Simple Calculator");
+		
 		btn1=new Button("1");
 		btn1.setMinSize(70, 50);		
 		//btn1.getOnAction();
@@ -76,32 +73,49 @@ public class SimpleCalculator extends Application
 		
 		
 		btnMult=new Button("*");
-		btnMult.setMinSize(70, 50);
+		btnMult.setMinSize(70, 50);	
+		btnMult.setStyle("-fx-font-weight: bolder");
+		
 		btnAdd=new Button("+");
 		btnAdd.setMinSize(70, 50);
+		btnAdd.setStyle("-fx-font-weight: bolder");
+		
 		btnSub=new Button("-");
 		btnSub.setMinSize(70, 50);
+		btnSub.setStyle("-fx-font-weight: bolder");
+		
 		btnDivi=new Button("/");
 		btnDivi.setMinSize(70, 50);
+		btnDivi.setStyle("-fx-font-weight: bolder");
 		
 		btnClear=new Button("Clear");
 		btnClear.setMinSize(70, 50);
+		btnClear.setStyle("-fx-font-weight: bolder");
+		
 		btnEqual=new Button("=");
 		btnEqual.setMinSize(70, 50);
+		btnEqual.setStyle("-fx-font-weight: bolder");
 		
 		txtDisplay = new TextField();
 		txtDisplay.setMinSize(300, 65);
 		
+		
+		//event handler class
 		Calculator caluclatorAndEvent = new Calculator();
 		
-		
-		
+		//number buttons
 		btn0.setOnAction(caluclatorAndEvent);
-		btn1.setOnAction(new Calculator());
+		btn1.setOnAction(caluclatorAndEvent);
 		btn2.setOnAction(caluclatorAndEvent);
-		btn3.setOnAction(caluclatorAndEvent);
+		btn3.setOnAction(caluclatorAndEvent);		
+		btn4.setOnAction(caluclatorAndEvent);
+		btn5.setOnAction(caluclatorAndEvent);
+		btn6.setOnAction(caluclatorAndEvent);
+		btn7.setOnAction(caluclatorAndEvent);	
+		btn8.setOnAction(caluclatorAndEvent);	
+		btn9.setOnAction(caluclatorAndEvent);	
 		
-		
+		//operator buttons
 		btnAdd.setOnAction(caluclatorAndEvent);
 		btnSub.setOnAction(caluclatorAndEvent);
 		btnDivi.setOnAction(caluclatorAndEvent);
@@ -111,7 +125,8 @@ public class SimpleCalculator extends Application
 		btnEqual.setOnAction(caluclatorAndEvent);
 		
 		
-		//Panel pan = new Panel()
+		
+		
 		
 		
 		GridPane grid = new GridPane();	
@@ -144,13 +159,13 @@ public class SimpleCalculator extends Application
 		
 		grid.add(btnClear, 1, 5); 
 	
-	   		
+	    
 		//Setting the vertical and horizontal gaps between the columns 
 		grid.setVgap(5); 
 		grid.setHgap(5); 
 		  
 		Scene scene = new Scene(grid); 
-		primaryStage.setScene(scene);
+		primaryStage.setScene(scene);		
 		primaryStage.show();
 	}
 

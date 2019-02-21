@@ -62,11 +62,18 @@ public class Calculator implements EventHandler<ActionEvent>
 	public void handle(ActionEvent event) 
 	{
 		//all number buttons
-		if(event.getSource() == SimpleCalculator.btn0 || event.getSource() == SimpleCalculator.btn1 ||event.getSource() == SimpleCalculator.btn2 || event.getSource() == SimpleCalculator.btn3)
+		if(event.getSource() == SimpleCalculator.btn0 
+				|| event.getSource() == SimpleCalculator.btn1
+				|| event.getSource() == SimpleCalculator.btn2
+				|| event.getSource() == SimpleCalculator.btn3
+				|| event.getSource() == SimpleCalculator.btn4
+				|| event.getSource() == SimpleCalculator.btn5
+				|| event.getSource() == SimpleCalculator.btn6
+				|| event.getSource() == SimpleCalculator.btn7
+				|| event.getSource() == SimpleCalculator.btn8
+				|| event.getSource() == SimpleCalculator.btn9)
 		{		
-			 //System.out.println("test tet " + SimpleCalculator.btn1 + "" + event.getSource());
-			
-			
+					
 			tempValue += ((Button)event.getSource()).getText();		
 			SimpleCalculator.txtDisplay.setText(tempValue);				
 			System.out.println(tempValue);
@@ -76,15 +83,14 @@ public class Calculator implements EventHandler<ActionEvent>
 		{
 			tempValue = "";
 			SimpleCalculator.txtDisplay.setText(tempValue);			
-			System.out.println("Clear event fire: " + tempValue);
+			System.out.println("text box cleared: " + tempValue);
 		}
 		//operators buttons
 		if(event.getSource() == SimpleCalculator.btnAdd || event.getSource() == SimpleCalculator.btnSub || event.getSource() == SimpleCalculator.btnDivi || event.getSource() == SimpleCalculator.btnMult)
 		{
 			operator = ((Button)event.getSource()).getText();
 			num1 = Double.parseDouble(tempValue);			
-			tempValue = "";
-			
+			tempValue = "";			
 			System.out.println("Operator: " + operator);
 		}
 		//equal button
@@ -95,6 +101,10 @@ public class Calculator implements EventHandler<ActionEvent>
 			Calculate();			
 			SimpleCalculator.txtDisplay.setText(Calculate());
 			System.out.println("Equal to:  " + Calculate());
+			
+			tempValue = "";
+			num2 = 0;
+			num1 = 0;
 			
 			
 		}
