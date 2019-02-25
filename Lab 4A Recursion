@@ -22,6 +22,26 @@ class Recursion
     }
 }
 
+
+ //check palandrom
+    public static boolean IsPalandrome(String str, int index)
+    {
+        
+        boolean result = false; 
+        
+        int length = index;
+        
+        if(index != 0)
+        {
+            IsPalandrome(str, index-1);
+            
+            length = index;
+            System.out.println("length = " + length);
+        }
+      
+        return result;
+    }
+
 public class HelloWorld
 {
      public static void main(String []args)
