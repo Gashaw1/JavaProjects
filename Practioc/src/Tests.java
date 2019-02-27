@@ -18,7 +18,8 @@ static void countvoul(String str, int index)
 	public static void main(String[] args)
 	{
 	
-		Tests.countvoul("akale", 0);
+		Dowork.DoWork(3);
+		//Tests.countvoul("akale", 0);
 	}
 
 }
