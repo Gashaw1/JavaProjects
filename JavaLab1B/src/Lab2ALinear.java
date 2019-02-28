@@ -1,6 +1,6 @@
 
 import java.util.Random;
-//Gashawbeza Amalto
+
 public class Lab2ALinear 
 {
 
