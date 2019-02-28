@@ -1,5 +1,4 @@
 
-//Gashawbeza Amalto
 public class Recursion {
 	
 	private static int count = 0;	
