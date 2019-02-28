@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-//Gashawbeza Amalto
+
 public class TestGUI extends Application  {
 	
 	static Button btn1;
