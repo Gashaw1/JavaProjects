@@ -1,5 +1,5 @@
 import java.util.*;
-//Gashawbea Amalto
+
 public class Lab1AConsole 
 {
 
