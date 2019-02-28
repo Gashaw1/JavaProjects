@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//Gashawbeza Amalto
+
 abstract class Vacation {
 	double budget;
 	String destination;
