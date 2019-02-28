@@ -1,7 +1,7 @@
 
 
 import java.util.Random;
-//Gashawbeza Amalto
+
 public class ArrayOperations 
 {
 	
