@@ -1,5 +1,5 @@
 
-//Gashawbeza Amalto
+
 public class MyLab2A {
 
 	public static void main(String[] args) 

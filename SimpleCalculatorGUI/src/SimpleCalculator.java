@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField; 
 import javafx.scene.layout.GridPane;  
 import javafx.stage.Stage; 
-//Gashawbeza Amalto
+
 public class SimpleCalculator extends Application 
 {
 	

@@ -1,5 +1,5 @@
 
-//Gashawbeza Amalto
+
 abstract class GeometricObject {
 	abstract double getParameter();
 	abstract double getArea();

@@ -1,5 +1,5 @@
 
-//Gashawbeza Amalto
+
 public class Palindrome {
 	
 	
