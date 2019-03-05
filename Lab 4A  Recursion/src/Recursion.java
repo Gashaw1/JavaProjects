@@ -1,11 +1,11 @@
 
-//Gashawbeza Amalto
 public class Recursion {
 	
 	private static int count = 0;	
 	public static int countVowels(String str, int index)
-	{		
-		if(index <= str.toLowerCase().length()-1)
+	{
+		str.toLowerCase();
+		if(index <= str.length()-1)
 		{
 			if(str.charAt(index)=='a' 
 					|| str.charAt(index)=='e'

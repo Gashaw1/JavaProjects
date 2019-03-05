@@ -1,4 +1,10 @@
 
+class DontWork{
+	
+	public static void dontWork() {
+		
+	}
+}
 public class Dowork 
 {
 	public static void DoWork(int i)
