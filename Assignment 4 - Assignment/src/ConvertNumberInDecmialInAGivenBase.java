@@ -1,12 +1,13 @@
 
 public class ConvertNumberInDecmialInAGivenBase {
 	
-	String result = "";
-	public  String convertBase(int input, int baseNum)
+	static String result = "";
+	public static  String convertBase(int input, int baseNum)
 	{
 		if(input > 0)
 		{
-			int remainder = input/baseNum;
+			int remainder = input % baseNum;
+			
 			if(remainder >= 10)
 			{
 				String latters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -23,14 +24,18 @@ public class ConvertNumberInDecmialInAGivenBase {
 		}
 		else
 		{
+			//System.out.println("Before reverse:  " + result);
 			result = Reverse(result);
+			//toString();
+			//System.out.println("After reverse:  " + result);
 		}
 		return result;
 	}
-	private String Reverse(String str) 
+	
+	private static String Reverse(String str) 
 	{
 		String reverseString = "";
-		for(int i = str.length()-1; i == 0; i --)
+		for(int i = str.length()-1; i >= 0; i --)
 		{
 			reverseString += str.charAt(i);
 		}
