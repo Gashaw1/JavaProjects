@@ -1,24 +1,33 @@
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-
+//Gashawbeza Amalto
 public class ArrayListandLinkedList
 {
 	private static ArrayList<Integer> arrayListIntegers = new ArrayList<Integer>();
 	private static LinkedList<Integer> linkedListInteger = new LinkedList<Integer>();
-	public static ArrayList<Integer> InsertElementArrayList(int nums)
+	
+	
+	public static ArrayList<Integer> getArrayListElements()
 	{
-		arrayListIntegers.add(nums);
 		return arrayListIntegers;
-	}	
-	public static LinkedList<Integer> InsertElementLinkedList(int num)
+	}
+	public static LinkedList<Integer> getLinkedListElements()
 	{
-		linkedListInteger.add(num);
 		return linkedListInteger;
+	}
+	public static void InsertElementArrayList(int nums)
+	{		
+		arrayListIntegers.add(nums);		
+	}	
+	public static void InsertElementLinkedList(int num)
+	{
+	
+		linkedListInteger.add(num);		
 	}
 	
 	
-	public static int sumElementOfArrayList(ArrayList<Integer> lists)
+	public static int sumOfArrayListElements(ArrayList<Integer> lists)
 	{
 	    int sumResult = 0;
 		

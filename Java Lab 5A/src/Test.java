@@ -1,30 +1,47 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class Test {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		Scanner scanner;
-		int insertCount = 0;
-		
-		while(insertCount != 10)
+		int insertCount = 10;
+
+		while (insertCount != 0)
 		{
-			if(insertCount == 0)
+			if (insertCount == 10) 
 			{
-				System.out.println("Enter first numbers");
-			}			
-			scanner = new Scanner(System.in);			
-		    System.out.print(ArrayListandLinkedList.InsertElementArrayList(scanner.nextInt()) + "\n");			
-			insertCount += 1;
-			
-			System.out.println("Enter " + insertCount + " number!");
+				System.out.println("Add 10 numbers ArrayList");
+			}
+			scanner = new Scanner(System.in);
+		    ArrayListandLinkedList.InsertElementArrayList(scanner.nextInt());
+			insertCount -= 1;			
+			System.out.println(" "  + insertCount + " more left ");
 		}
-		
+				
+		System.out.println("\nList of num in ArrayList: " + ArrayListandLinkedList.getArrayListElements()+ "\n");
+	  	System.out.println("Sum of numbers in the List " + 	ArrayListandLinkedList.sumOfArrayListElements(ArrayListandLinkedList.getArrayListElements()));
 	
-		ArrayList<Integer> myList =  ArrayListandLinkedList.InsertElementArrayList(2);
+	  	System.out.println();
+	  	
+	  	insertCount = 10;
+	  	
+	  	while (insertCount != 0)
+		{
+			if (insertCount == 10) 
+			{
+				System.out.println("Add 10 numbers LinkedList");
+			}
+			scanner = new Scanner(System.in);
+		    ArrayListandLinkedList.InsertElementLinkedList(scanner.nextInt());
+			insertCount -= 1;
+			
+			System.out.println(" "  + insertCount + " more left ");
+		}
+				
+		System.out.println("\nList of num in LinkedList: " + ArrayListandLinkedList.getLinkedListElements()+ "\n");
+	  	System.out.println("Sum of numbers in the List " + 	ArrayListandLinkedList.sumOfLinkedListElement(ArrayListandLinkedList.getLinkedListElements()));
 		
-	 System.out.println("sum of arrayList " + ArrayListandLinkedList.sumElementOfArrayList(myList));
 	}
 
 }
