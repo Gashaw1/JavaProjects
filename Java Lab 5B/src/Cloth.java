@@ -1,4 +1,4 @@
-
+//Gashawbeza Amalto
 public class Cloth {
 	
 	String color;

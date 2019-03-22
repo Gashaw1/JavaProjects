@@ -5,10 +5,12 @@ public class Test {
 	
 
 		
-		Bird b = new Bird("Test");
-		Bird b1 = new Bird("Test");
-		Bird b2 = new Bird("Testeee");
-		Bird b3 = new Bird("Test1");
+		Bird b = new Bird("Turkey");
+		Bird b1 = new Bird("Eagle");
+		Bird b2 = new Bird("Heron");
+		Bird b3 = new Bird("Owl");
+		Bird b4 = new Bird("Owl");
+	
 	
 		BirdSurvey br = new BirdSurvey();
 		
@@ -16,6 +18,8 @@ public class Test {
 		br.add(b1);
 		br.add(b2);
 		br.add(b3);
+		br.add(b4);
+		
 		
 		br.GetReprord();
 	}

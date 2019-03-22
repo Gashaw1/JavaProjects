@@ -17,7 +17,7 @@ public class StacksCloth
 	 }
 	 
 	 
-	 StacksCloth[] clothes = new StacksCloth[3];
+	StacksCloth[] clothes = new StacksCloth[3];
 	public int index =  0;
 	 
 	

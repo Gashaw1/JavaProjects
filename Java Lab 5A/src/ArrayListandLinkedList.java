@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-//Gashawbeza Amalto
+//
 public class ArrayListandLinkedList
 {
 	private static ArrayList<Integer> arrayListIntegers = new ArrayList<Integer>();

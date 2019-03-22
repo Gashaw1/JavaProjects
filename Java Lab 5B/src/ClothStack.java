@@ -1,9 +1,9 @@
-
+//Gashawbeza Amalto
 public class ClothStack {
 
 	int topIndex = -1;
 	
-	Cloth[] clothes;
+	Cloth[] clothes = new Cloth[3];
 
 	boolean IsEmpty() 
 	{
@@ -26,7 +26,7 @@ public class ClothStack {
 	}
 	public Cloth pop()
 	{
-		if(IsEmpty() == false)
+		if(!IsEmpty())
 		{
 			return clothes[topIndex --];
 		}
@@ -36,16 +36,40 @@ public class ClothStack {
 			return new Cloth();
 		}
 	}
-	public Cloth pick()
+	public Cloth peek()
 	{
-		if(IsEmpty() == false)
+		if(!IsEmpty())
 		{
+			
 			return clothes[topIndex];
 		}
 		else
 		{
 			System.out.println("stack underflow!");
 			return new Cloth();
+		}
+		
+	}
+	
+	public int countWashedAtHighTempItem()
+	{
+		int count = 0;
+		for(int i = 0;i < clothes.length-1; i ++)
+		{
+			if(clothes[i].WashInHighTemp)
+			{
+				count+=1;
+			}
+		}
+		System.out.print(count +  " clothes can wash at hight temp");
+		
+		return count;
+	}
+	public void ReuturnAllItem()
+	{
+		for(int i = 0;i <= clothes.length-1; i ++)
+		{			
+			   System.out.println(clothes[i].Name + "  : " + clothes[i].color + "  " + clothes[i].WashInHighTemp);
 		}
 		
 	}
