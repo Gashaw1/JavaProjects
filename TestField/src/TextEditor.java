@@ -24,9 +24,9 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 
 	Label fileName;
 	TextArea textArea;
-	TextArea txtField;
-	static Button btn1;
-	static Button btn2;
+	TextField txtFileName;
+	static Button btnGet;
+	static Button btnSave;
 	public static void main(String[] args) 
 	{
 		launch(args);
@@ -42,20 +42,20 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 		fileName.setAlignment(Pos.CENTER);
 		fileName.setStyle("-fx-background-color: #ffffff; ");
 		
-		TextField textField = new TextField();
-		textField.setMinSize(400, 30);	
-		textField.setStyle("-fx-font-size: 15px; ");
+	    txtFileName = new TextField();
+		txtFileName.setMinSize(400, 30);	
+		txtFileName.setStyle("-fx-font-size: 15px; ");
        
        
-		btn1=new Button("Get");
-		btn1.setMinSize(60, 30);	
-		btn1.setFont(new Font("Arial", 15));
-		btn1.setStyle("-fx-border-color: lightgray; ");	
+		btnGet=new Button("Get");
+		btnGet.setMinSize(60, 30);	
+		btnGet.setFont(new Font("Arial", 15));
+		btnGet.setStyle("-fx-border-color: lightgray; ");	
 		
-		btn2=new Button("Save");
-		btn2.setMinSize(60, 30);	
-		btn2.setFont(new Font("Arial", 15));		
-		btn2.setStyle("-fx-border-color: lightgray; ");
+		btnSave=new Button("Save");
+		btnSave.setMinSize(60, 30);	
+		btnSave.setFont(new Font("Arial", 15));		
+		btnSave.setStyle("-fx-border-color: lightgray; ");
 		
 		textArea = new TextArea();
 		textArea.setWrapText(true);
@@ -64,15 +64,15 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 		textArea.setPrefColumnCount(20);
 		
 		
-		btn1.setOnAction(this);
-		btn2.setOnAction(this);	
+		btnGet.setOnAction(this);
+		btnSave.setOnAction(this);	
 		
 		FlowPane flowpane = new FlowPane();
         
         flowpane.getChildren().add(fileName);
-        flowpane.getChildren().add(textField);
-        flowpane.getChildren().add(btn1);
-        flowpane.getChildren().add(btn2);
+        flowpane.getChildren().add(txtFileName);
+        flowpane.getChildren().add(btnGet);
+        flowpane.getChildren().add(btnSave);
         flowpane.getChildren().add(textArea);        
       
         Scene scene = new Scene(flowpane, 700, 600);
@@ -84,16 +84,16 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 
 	@Override
 	public void handle(ActionEvent event) 
-	{
-		if(event.getSource()==btn1)
-		{
-			textArea.appendText(btn1.getText() + "");
-			System.out.println(btn1.getText());
+	{		
+		if(event.getSource()==btnGet)
+		{	
+			textArea.appendText(txtFileName.getText() + "");
+			System.out.println(btnGet.getText());
 		}
-		if(event.getSource()==btn2)
+		if(event.getSource()==btnSave)
 		{
-			textArea.appendText(btn2.getText() + "\n");
-			System.out.println(btn2.getText());
+			textArea.appendText(btnSave.getText() + "\n");
+			System.out.println(btnSave.getText());
 		}	
 	
 	}
