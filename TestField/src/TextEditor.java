@@ -2,7 +2,7 @@
 
 
 
-import java.io.File;
+
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -24,7 +24,7 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 
 	Label fileName;
 	TextArea textArea;
-	TextField txtFileName;
+	TextField txtFilename;
 	static Button btnGet;
 	static Button btnSave;
 	public static void main(String[] args) 
@@ -42,9 +42,9 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 		fileName.setAlignment(Pos.CENTER);
 		fileName.setStyle("-fx-background-color: #ffffff; ");
 		
-	    txtFileName = new TextField();
-		txtFileName.setMinSize(400, 30);	
-		txtFileName.setStyle("-fx-font-size: 15px; ");
+		txtFilename = new TextField();
+		txtFilename.setMinSize(400, 30);	
+		txtFilename.setStyle("-fx-font-size: 15px; ");
        
        
 		btnGet=new Button("Get");
@@ -70,7 +70,7 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 		FlowPane flowpane = new FlowPane();
         
         flowpane.getChildren().add(fileName);
-        flowpane.getChildren().add(txtFileName);
+        flowpane.getChildren().add(txtFilename);
         flowpane.getChildren().add(btnGet);
         flowpane.getChildren().add(btnSave);
         flowpane.getChildren().add(textArea);        
@@ -85,10 +85,23 @@ public class TextEditor extends Application implements EventHandler<ActionEvent>
 	@Override
 	public void handle(ActionEvent event) 
 	{		
+		String txtName = txtFilename.getText();
+		
 		if(event.getSource()==btnGet)
 		{	
-			textArea.appendText(txtFileName.getText() + "");
-			System.out.println(btnGet.getText());
+			if(txtName.isEmpty())
+			{
+				//textArea.setAlignment(Pos.CENTER);
+				//text-inner-color:
+				textArea.setStyle("text-font-color: red; ");
+				textArea.setText("not text found!");
+			}
+			else
+			{
+				textArea.appendText(txtFilename.getText() + "");
+				System.out.println(btnGet.getText());
+			}
+			
 		}
 		if(event.getSource()==btnSave)
 		{
