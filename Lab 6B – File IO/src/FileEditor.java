@@ -1,63 +1,87 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileEditor 
 {
-	static String fileName;
+	
+	private static String absoluteFileName;
 	static File file;
 	static PrintWriter write;
-	
-	public FileEditor(File file)
+	public FileEditor()
+	{}
+	public FileEditor(String fileName, String filePath) throws IOException
 	{
 		
-	}
-	public static void GetFile()
-	{
-       
-	}
-	public static File GetFile(String fileName) throws IOException
-	{
-		File file = new File(fileName);
+		new File(absoluteFileName);
 		
-		if(!file.exists())
-		{
-		   throw new IOException("File not fund!");
-		}
-		else
-		{
-			return file;
-		}
 	}
-	public static void PostFile(File file) throws IOException
+	static boolean IsFileExist(String absFileName) throws IOException
 	{
+		boolean isExist = false;
+        File file = new File(absFileName);		
 		if(file.exists())
 		{
-			throw new IOException("File already exist!");
+			isExist = true;		  
+		}
+		System.out.println(absFileName + " exist " + isExist);
+		return isExist;		
+	}
+	public static File GetFile(String absFileName) throws IOException 
+	{
+		File file = null;
+		if(IsFileExist(absFileName))
+		{
+			file = new File(absFileName);	
+			//PrintReader 
+		}
+		System.out.println(absFileName + " " + file);
+		return file;	
+		
+	}
+	public static String CreatFile(String absFileName) throws IOException
+	{		
+		String fileCreated = "1";	
+	    if(!IsFileExist(absFileName))
+		{
+	    	File file = new File(absFileName);	
+	    	file.createNewFile();
+	    	file.getClass();
+	    	System.out.println(file.getName() + "file created successfuly \n" + fileCreated);
 		}
 		else
 		{
-		     write = new PrintWriter(file);
+			fileCreated= "-1";
+			throw new IOException(" file already exist!\n" + fileCreated);
+						
 		}
+		return fileCreated;
 	}
-	public static String PutFile(File file, String fileName)
+	public String AddContentToFile(String absFileName, String fileContent) throws IOException
 	{
-		return "";
+		String contentAdd = "-1";
+		if(IsFileExist(absFileName))
+		{
+			File file = new File(absFileName);
+			PrintWriter printWriter = new PrintWriter(file);
+			printWriter.println(fileContent);            
+			printWriter.close();
+			contentAdd = "1";		
+			
+			System.out.println("content add " + contentAdd);
+		}		
+		return contentAdd;
 	}
-	public static boolean DelteFile() throws IOException
+	public boolean DelteFile(String absfileName) throws IOException
 	{
 		boolean isFileDeleted = false;
-		file = new File(fileName);
-		if(file.exists())
+		if(IsFileExist(absfileName))
 		{
-			file.delete();
-			isFileDeleted = true;
-		}
-		else
-		{
-			isFileDeleted = false;
-			throw new IOException("File not exist!");			
-		}
+			 new File(absfileName).delete();
+			 isFileDeleted = true;		 
+		}	
+		System.out.println(absfileName + " file deleted " + isFileDeleted);
 		return isFileDeleted;
 	}	
 }
