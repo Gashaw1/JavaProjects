@@ -1,11 +1,10 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 
 public class FileEditor {
 
@@ -15,35 +14,39 @@ public class FileEditor {
 	static BufferedReader br = null;
 	static FileReader fr = null;
 
-
 	public FileEditor() {
 	}
 
 	public FileEditor(String fileName, String filePath) throws IOException {
 
 		new File(absoluteFileName);
-
 	}
 
 	static boolean IsFileExist(String absFilename) throws IOException {
-		boolean isExist = false;
+		
 		File file = new File(absFilename);
 		if (file.exists()) {
-			isExist = true;
+			
+			return true;
 		}
-		System.out.println(absFilename + " exist " + isExist);
-		return isExist;
+		else
+		{
+			return false;
+			//System.out.println(absFilename + " exist " + isExist);
+			//throw new  IOException("File not exist!");
+		}
+		
+		//return isExist;
 	}
 
 	public File GetFile(String absFileName) throws IOException {
 		File file = null;
 		if (IsFileExist(absFileName)) {
-			file = new File(absFileName);
-
-			// PrintReader
-		} else {
-			System.out.println(absFileName + " " + file);
-			throw new IOException("File not found !");
+			file = new File(absFileName);		
+		}	
+		else
+		{
+			throw new IOException("file not found!");
 		}
 		return file;
 
@@ -64,8 +67,7 @@ public class FileEditor {
 		}
 		return fileCreated;
 	}
-
-	// return 1 if file created -1 if not
+	
 	public static String CreatFile(String absFileName) throws IOException {
 		String fileCreated = "1";
 		if (!IsFileExist(absFileName)) {

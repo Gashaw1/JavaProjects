@@ -1,7 +1,7 @@
 
-import java.io.BufferedReader;
+
 import java.io.File;
-import java.io.FileReader;
+
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -28,6 +28,7 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 	TextField txtFilename;
 	static Button btnGet;
 	static Button btnSave;	
+	static Button btnCreateFile;
 	FileEditor fileEditor;
 	File file;	
 
@@ -61,6 +62,11 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 		btnSave.setFont(new Font("Arial", 15));
 		btnSave.setStyle("-fx-border-color: lightgray; ");
 
+		btnCreateFile = new Button("+ New file");
+		btnCreateFile.setMinSize(60, 30);
+		btnCreateFile.setFont(new Font("Arial", 15));
+		btnCreateFile.setStyle("-fx-border-color: lightgray; ");
+		
 		textArea = new TextArea();
 		textArea.setFont(new Font("Arial", 20));
 		textArea.setStyle("-fx-font-family: monospace");
@@ -71,11 +77,12 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 	
 
 		btnGet.setOnAction(this);
+		btnCreateFile.setOnAction(this);
 		btnSave.setOnAction(this);
 
 		FlowPane flowpane = new FlowPane();
 
-		flowpane.getChildren().addAll(fileName, txtFilename, btnGet, btnSave, textArea);		
+		flowpane.getChildren().addAll(fileName, txtFilename,btnCreateFile, btnGet, btnSave, textArea);		
 
 		Scene scene = new Scene(flowpane, 1000, 900);
 		primaryStage.setScene(scene);
@@ -88,21 +95,42 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 	{
 		
 		String txtName = txtFilename.getText();
-
-		if (event.getSource() == btnGet) 
+		
+		if(event.getSource() == btnCreateFile)
 		{
-			
-			if (txtName.isEmpty()) 
-			{			
-				txtFilename.setStyle("-fx-border-color: Red; ");
-				
-				textArea.setText("not text found!");
-			} 
-			else
+			if(!txtName.isEmpty())
 			{
-				fileEditor = new FileEditor();
-			    try 
+				try {
+					if(FileEditor.IsFileExist(txtName)==false)
+					{
+					   String result = FileEditor.CreatFile(txtName);
+					   
+					   if(result == "1")
+					   {
+						   textArea.setText("file created as " + txtName);
+					   }
+					}
+					else
+					{
+						textArea.setText("Try another name " + txtName);
+						
+					}
+				} catch (IOException e) {
+					
+					e.getLocalizedMessage();
+				}
+			}
+		}
+		
+		
+		if (event.getSource() == btnGet) 
+		{			
+			if (!txtName.isEmpty()) 
+			{	
+				textArea.setText("");
+				try 
 			    {
+					 fileEditor = new FileEditor();
 				     file = fileEditor.GetFile(txtFilename.getText());
 				     String result = fileEditor.ReadFile(file.getAbsolutePath());
 				     textArea.appendText(result);				     
@@ -110,22 +138,30 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 				}
 			    catch (IOException e)
 			    {					
-					e.printStackTrace();
+					e.getMessage().toString();
 				}				
-				
 			}
-
 		}
 		if (event.getSource() == btnSave) 
 		{
-			fileEditor = new FileEditor();
-			try 
+			String filename = txtFilename.getText();
+			try {
+				if(FileEditor.IsFileExist(filename)== true)
+				{
+					fileEditor = new FileEditor();
+					try 
+					{
+						fileEditor.WrtiteContentToFile(file.getAbsolutePath(), textArea.getText());
+					} 
+					catch (IOException e)
+					{
+						e.getMessage().toString();
+					}
+				}
+			} catch (IOException e)
 			{
-				fileEditor.WrtiteContentToFile(file.getAbsolutePath(), textArea.getText());
-			} 
-			catch (IOException e)
-			{
-				e.printStackTrace();
+				
+				e.getMessage().toString();
 			}
 			
 			

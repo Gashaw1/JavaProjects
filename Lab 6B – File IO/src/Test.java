@@ -14,9 +14,8 @@ public class Test {
 
 		try {
 			FileEditor fileEditor = new FileEditor();
-			// fileEditor.CreatFile("C:\\Users\\User\\Desktop\\akal.java");
-					
-			
+				
+			//fileEditor.CreatFile(absFileName)
 			fileEditor.WrtiteContentToFile("C:\\Users\\User\\Desktop\\akal.java", "aasssa");
 			
 			
