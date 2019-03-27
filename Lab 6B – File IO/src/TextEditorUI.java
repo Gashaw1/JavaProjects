@@ -52,7 +52,7 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 		txtFilename.setMinSize(400, 30);
 		txtFilename.setStyle("-fx-font-size: 15px; ");
 
-		btnGet = new Button("Get");
+		btnGet = new Button("Open");
 		btnGet.setMinSize(60, 30);
 		btnGet.setFont(new Font("Arial", 15));
 		btnGet.setStyle("-fx-border-color: lightgray; ");
