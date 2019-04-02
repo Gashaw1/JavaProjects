@@ -42,6 +42,7 @@ public class TextEditorUI extends Application implements EventHandler<ActionEven
 	{
 		primaryStage.setTitle("Simple text editor");
 
+		
 		fileName = new Label("File name");
 		fileName.setMinSize(100, 30);
 		fileName.setFont(new Font("Arial", 15));

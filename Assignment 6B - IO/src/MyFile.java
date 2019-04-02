@@ -1,45 +1,42 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+//Gashawbeza amalto
 public class MyFile {
 	
 	public static boolean IsFileReadable(File file)
 	{
 		return file.canRead();		
 	}
-	
-	//return newer file
-	public static File CopyFileTo(String newFilename, String fromOrigFilename) throws IOException 
+	//return copied file
+	public static File CopyFileTo(String whereFilename, String fromFilename) throws IOException 
 	{ 
 		File newfile = null;
 		PrintWriter printWriter = null;
-		if (IsFileExist(newFilename) && IsFileExist(fromOrigFilename))
+		if (IsFileExist(whereFilename) && IsFileExist(fromFilename))
 		{
-			newfile = new File(newFilename);
+			newfile = new File(whereFilename);
 			
-			FileReader fr = new FileReader(fromOrigFilename);
+			FileReader fr = new FileReader(fromFilename);
 			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(fr);
+			
 			String currentLine;     			
-		    
+		    String tempFile="";
 			while ((currentLine = br.readLine()) != null) 
 			{    			
-				//readFile += currentLine + "\n"; 
-			    printWriter = new PrintWriter(newfile);
-				printWriter.println(currentLine + "\n");								
-				System.out.println("coping file : "+ currentLine + "...");				
+				tempFile += currentLine + "\n"; 
+			   			
 			}		
+			 printWriter = new PrintWriter(whereFilename);
+			 printWriter.print(tempFile);								
+			 
 			printWriter.close();
 		}
-		return newfile;
- 	   
-			
+		return newfile;			
 	}
     public static boolean IsFileExist(String filename)
     {
@@ -62,15 +59,17 @@ public class MyFile {
     		if(file.createNewFile())
     	    {
     	    	IsfileCreated = "1";
+    	    	//System.out.print("file created " + IsfileCreated);
     	    } 
     	}    	
     	else
     	{
+    		
     		throw new IOException("File exist the same name " + filename);
     	}
     	return IsfileCreated;
     }
-    public static String printFile(String filename) throws IOException
+    public static String ReadTheFile(String filename) throws IOException
     {
     	String readFile = "";
 
