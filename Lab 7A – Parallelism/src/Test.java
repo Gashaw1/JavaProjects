@@ -1,6 +1,6 @@
 import java.util.Random;
 
-//Gashawbeza Amalto
+
 public class Test {
 
 	public static void main(String[] args)
@@ -22,9 +22,9 @@ public class Test {
 		tr.start();
 		tr2.start();
 		
-		while(tr.isAlive() || tr2.isAlive())
-		{			
-		}
+		//
+		while(tr.isAlive() || tr2.isAlive()){};
+		
 		System.out.println("Thread 1 " + task1.getSum());
 		System.out.println("Thread 2 " + task2.getSum());
 		
