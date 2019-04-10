@@ -33,7 +33,7 @@ public class tests {
 
 	public static void main(String[] args) 
 	{
-
+		
 		Calcualte.test();
 		
 		int a = 3;
